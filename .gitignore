@@ -1,0 +1,133 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+coverage/
+.nyc_output
+*.lcov
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.test.js
+test-results/
+playwright-report/
+
+# Production
+build
+dist
+.next/
+out/
+.vercel
+.turbo
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+daily.log
+error.log
+combined.log
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.fleet/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+data/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Secrets and credentials
+*.pem
+*.key
+*.cert
+credentials.json
+service-account.json
+.secrets.baseline
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Misc
+.husky/_
+!.husky/.gitignore
+.secrets
+backup/
+*.bak
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Generated files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# AI/ML
+models/
+*.h5
+*.pkl
+*.joblib
+checkpoints/
+
+# Monitoring
+.prometheus/
+grafana/data/

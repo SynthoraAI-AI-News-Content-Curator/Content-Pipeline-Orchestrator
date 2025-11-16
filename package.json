@@ -1,0 +1,98 @@
+{
+  "name": "content-pipeline-orchestrator",
+  "version": "1.0.0",
+  "description": "SynthoraAI - AI-Powered Content Pipeline Orchestrator for aggregating, summarizing, and presenting curated articles for government officials",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:crawler": "cd crawler && npm run dev",
+    "dev:newsletter": "cd newsletters && npm run dev",
+    "build": "npm-run-all build:*",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build:crawler": "cd crawler && npm run build",
+    "build:newsletter": "cd newsletters && npm run build",
+    "start": "npm-run-all --parallel start:*",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "start:crawler": "cd crawler && npm start",
+    "start:newsletter": "cd newsletters && npm start",
+    "test": "npm-run-all test:*",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test:crawler": "cd crawler && npm test",
+    "lint": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format": "npm run lint",
+    "install:all": "npm install && npm run install:workspaces",
+    "install:workspaces": "npm-run-all install:backend install:frontend install:crawler install:newsletter install:agentic",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:crawler": "cd crawler && npm install",
+    "install:newsletter": "cd newsletters && npm install",
+    "install:agentic": "cd agentic_ai && pip install -r requirements.txt",
+    "crawl": "cd crawler && npm run crawl",
+    "crawl:past": "cd crawler && npm run fetch:past",
+    "crawl:latest": "cd crawler && npm run fetch:latest",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "deploy": "vercel --prod",
+    "daily": "./daily.sh",
+    "setup:cron": "./install_daily_cron.sh",
+    "sync:vectors": "./sync_vectors.sh"
+  },
+  "keywords": [
+    "ai",
+    "content-curation",
+    "government",
+    "articles",
+    "summarization",
+    "crawler",
+    "newsletter",
+    "nextjs",
+    "express",
+    "mongodb",
+    "langchain",
+    "langgraph",
+    "agentic-ai",
+    "machine-learning",
+    "nlp"
+  ],
+  "author": "SynthoraAI Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SynthoraAI-AI-News-Content-Curator/Content-Pipeline-Orchestrator.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "workspaces": [
+    "backend",
+    "frontend",
+    "crawler",
+    "newsletters"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.1"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,md}": [
+      "prettier --write"
+    ]
+  }
+}
